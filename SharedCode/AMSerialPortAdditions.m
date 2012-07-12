@@ -295,12 +295,10 @@
 
 static int64_t AMMicrosecondsSinceBoot (void)
 {
-	AbsoluteTime uptime1 = UpTime();
-	Nanoseconds uptime2 = AbsoluteToNanoseconds(uptime1);
-	uint64_t uptime3 = (((uint64_t)uptime2.hi) << 32) + (uint64_t)uptime2.lo;
-	int64_t uptime4 = uptime3 / 1000;
-	
-	return uptime4;
+    NSTimeInterval uptime = [[NSProcessInfo processInfo] systemUptime];
+    int64_t microseconds = uptime * 1000000;
+    
+    return microseconds;
 }
 
 @implementation AMSerialPort (AMSerialPortAdditionsPrivate)
