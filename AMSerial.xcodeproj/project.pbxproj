@@ -13,6 +13,10 @@
 		4370C7FB15B072E30045F649 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5B6E09E02D03CD90100010A /* IOKit.framework */; };
 		4370C7FC15B072E50045F649 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		4370C7FD15B075960045F649 /* libAMSerial.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43AD772C15B06C0B004AF39D /* libAMSerial.a */; };
+		4370C80E15B077610045F649 /* AMSerialPort.h in Headers */ = {isa = PBXBuildFile; fileRef = 43AD776515B070AD004AF39D /* AMSerialPort.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4370C81015B077630045F649 /* AMSerial.h in Headers */ = {isa = PBXBuildFile; fileRef = 43AD776215B070AD004AF39D /* AMSerial.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4370C81115B077680045F649 /* AMSerialPortAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 43AD776715B070AD004AF39D /* AMSerialPortAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4370C81215B0776C0045F649 /* AMSerialPortList.h in Headers */ = {isa = PBXBuildFile; fileRef = 43AD776915B070AD004AF39D /* AMSerialPortList.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		43AD777E15B070C0004AF39D /* AppController.h in Headers */ = {isa = PBXBuildFile; fileRef = 43AD777515B070C0004AF39D /* AppController.h */; };
 		43AD777F15B070C0004AF39D /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43AD777615B070C0004AF39D /* AppController.m */; };
 		43AD778315B070C0004AF39D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 43AD777D15B070C0004AF39D /* main.m */; };
@@ -202,6 +206,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4370C81015B077630045F649 /* AMSerial.h in Headers */,
+				4370C80E15B077610045F649 /* AMSerialPort.h in Headers */,
+				4370C81115B077680045F649 /* AMSerialPortAdditions.h in Headers */,
+				4370C81215B0776C0045F649 /* AMSerialPortList.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,6 +381,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "include/$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
@@ -391,6 +400,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "include/$(TARGET_NAME)";
 			};
 			name = Release;
 		};
