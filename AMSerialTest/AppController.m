@@ -7,8 +7,6 @@
 
 
 #import "AppController.h"
-#import "AMSerialPortList.h"
-#import "AMSerialPortAdditions.h"
 
 @interface AppController()
 - (void)_setupPort;

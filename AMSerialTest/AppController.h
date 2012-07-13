@@ -4,7 +4,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "AMSerialPort.h"
+#import <AMSerial/AMSerial.h>
 
 @interface AppController : NSObject <AMSerialPortReadDelegate> {
 	IBOutlet NSTextField *inputTextField;
