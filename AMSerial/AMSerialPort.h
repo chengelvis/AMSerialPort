@@ -115,14 +115,14 @@ typedef enum {
 	NSString *serviceName;
 	NSString *serviceType;
 	int fileDescriptor;
-	struct termios * __strong options;
-	struct termios * __strong originalOptions;
+	struct termios *options;
+	struct termios *originalOptions;
 	NSMutableDictionary *optionsDictionary;
 	NSFileHandle *fileHandle;
 	id owner;
-	char * __strong buffer;
+	char *buffer;
 	NSTimeInterval readTimeout; // for public blocking read methods and doRead
-	fd_set * __strong readfds;
+	fd_set *readfds;
 	id <AMSerialPortReadDelegate> readDelegate;
 	id <AMSerialPortWriteDelegate> writeDelegate;
 	NSLock *writeLock;
