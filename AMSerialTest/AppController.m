@@ -87,6 +87,7 @@
 		[outputTextView insertText:[aPort name]];
 		[outputTextView insertText:@":"];
 		[outputTextView insertText:[aPort bsdPath]];
+        //NSLog(@"%@",[aPort bsdPath]);
 		[outputTextView insertText:@"\r"];
 	}
 	[outputTextView setNeedsDisplay:YES];
@@ -108,7 +109,7 @@
 	}
 
 	if([self.port isOpen]) { // in case an error occured while opening the port
-		[self.port writeString:sendString usingEncoding:NSUTF8StringEncoding error:NULL];
+        [self.port writeString:sendString usingEncoding:NSUTF8StringEncoding error:NULL];
 	}
 }
 
@@ -130,7 +131,22 @@
 		
 		// open port - may take a few seconds ...
 		if ([self.port open]) {
-			
+            
+            // change port speed
+            if(![self.port setSpeed:B115200]) {
+
+                return ;
+            }
+            
+            // set port options
+            [self.port setParity:kAMSerialParityNone];
+            [self.port setDataBits:8];
+            [self.port setStopBits:kAMSerialStopBitsOne];
+            if(![self.port commitChanges]) {
+
+                return ;
+            }
+            
 			[outputTextView insertText:@"port opened\r"];
 			[outputTextView setNeedsDisplay:YES];
 			[outputTextView displayIfNeeded];

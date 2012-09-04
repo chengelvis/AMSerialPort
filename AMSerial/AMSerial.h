@@ -6,7 +6,7 @@
 //
 //
 
-#import <AMSerial/AMSerialPort.h>
-#import <AMSerial/AMSerialPortList.h>
-#import <AMSerial/AMSerialPortAdditions.h>
+#import "AMSerialPort.h"
+#import "AMSerialPortList.h"
+#import "AMSerialPortAdditions.h"
 
